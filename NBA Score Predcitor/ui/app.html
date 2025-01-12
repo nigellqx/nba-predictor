@@ -1,0 +1,81 @@
+<!--Obtained and Modified from ChatGPT-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBA Predictor</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="container">
+    <h1>NBA Predictor</h1>
+
+    <img src = "nba-logo.jpg" alt = "NBA Logo" class="logo">
+
+    <!-- Team Selection -->
+    <div class="team-section">
+      <!-- Home Team -->
+      <div class="team-box">
+        <label for="hometeam">Home Team:</label>
+        <select id="hometeam">
+          <option value="">Select a team</option>
+          <script>
+            const teams = [
+              "Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", 
+              "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", 
+              "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", 
+              "Golden State Warriors", "Houston Rockets", "Indiana Pacers", 
+              "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", 
+              "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", 
+              "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", 
+              "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", 
+              "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", 
+              "Toronto Raptors", "Utah Jazz", "Washington Wizards"
+            ];
+            teams.forEach(team => {
+              document.write(`<option value="${team}">${team}</option>`);
+            });
+          </script>
+        </select>
+        <div class="checkboxes">
+          <label><input type="checkbox" value="1"> No.1 Player Playing</label>
+          <label><input type="checkbox" value="2"> No.2 Player Playing</label>
+          <label><input type="checkbox" value="3"> No.3 Player Playing</label>
+        </div>
+      </div>
+
+      <!-- Away Team -->
+      <div class="team-box">
+        <label for="awayteam">Away Team:</label>
+        <select id="awayteam">
+          <option value="">Select a team</option>
+          <script>
+            teams.forEach(team => {
+              document.write(`<option value="${team}">${team}</option>`);
+            });
+          </script>
+        </select>
+        <div class="checkboxes">
+          <label><input type="checkbox" value="1"> No.1 Player Playing</label>
+          <label><input type="checkbox" value="2"> No.2 Player Playing</label>
+          <label><input type="checkbox" value="3"> No.3 Player Playing</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Predict Button -->
+    <button onclick="makePrediction()">Predict</button>
+
+    <div class="prediction-section">
+      <div class="prediction-details">
+        <p>Final Prediction: <span id="prediction">-</span></p>
+        <p>Probability: <span id="probability">-</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
