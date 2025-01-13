@@ -189,9 +189,9 @@ def nba_predict(nba_team, nba_opponent, playing):
 def load_saved_artifacts():
     global __model
     global __scaler
-    __scaler = joblib.load('./artifacts/scaler.pkl')
+    __scaler = joblib.load('./server/artifacts/scaler.pkl')
     __model = Model()
-    __model.load_state_dict(torch.load('./artifacts/nba_prediction_model.pt',weights_only=True))
+    __model.load_state_dict(torch.load('./server/artifacts/nba_prediction_model.pt',weights_only=True))
     __model.eval()
 
 if __name__ == '__main__':
